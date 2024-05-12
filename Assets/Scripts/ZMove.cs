@@ -10,7 +10,7 @@ public class ZMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Application.targetFrameRate = 120;
     }
 
     // Update is called once per frame
@@ -23,6 +23,8 @@ public class ZMove : MonoBehaviour
             movement = new Vector3(0f, 0f, -input);
         }
 
+
+        moveSpeed = GlobalStatus.speed;
         transform.Translate(movement * moveSpeed * Time.deltaTime);
 
         Vector3 currentPostion = transform.localPosition;

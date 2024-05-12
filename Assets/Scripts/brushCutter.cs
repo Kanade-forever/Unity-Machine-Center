@@ -7,7 +7,7 @@ public class brushCutter : MonoBehaviour
 {
     public SegmentCube cube;//也可以是别的类
     public float radius = 0.1f;
-    public float moveSpeed = 1f;
+//    public float moveSpeed = 1f;
     bool isCutting = false;
 
     public Button radiusChangeBtn;

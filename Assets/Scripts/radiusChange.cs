@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class radiusChange : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class radiusChange : MonoBehaviour
     public Text RadiusText;
 
     public float _radius;
-    // Start is called before the first frame update
+        // Start is called before the first frame update
     void Start()
     {
         btn.onClick.AddListener(onClick);
@@ -43,5 +44,6 @@ public class radiusChange : MonoBehaviour
     {
         _radius = value;
         SetSliderValue(value);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }

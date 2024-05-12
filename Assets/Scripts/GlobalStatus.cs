@@ -16,6 +16,7 @@ public class GlobalStatus : MonoBehaviour
     public const int cutterFlashPerSec = 160;
 
     public static float radius = 0.03f;
+    public static float speed = 0.3f;
 
     // Start is called before the first frame update
     void Start()

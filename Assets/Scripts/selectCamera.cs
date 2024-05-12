@@ -47,12 +47,13 @@ public class selectCamera : MonoBehaviour
 
     public void SwitchCamera()
     {
-        frozeFreeCameraBtn.gameObject.SetActive(false);
         // ÇÐ»»ÉãÏñ»úµÄ¼¤»î×´Ì¬
         xFixedCamera.gameObject.SetActive(false);
         yFixedCamera.gameObject.SetActive(false);
         zFixedCamera.gameObject.SetActive(false);
         FreeCamera.gameObject.SetActive(false);
+        frozeFreeCameraBtn.gameObject.SetActive(false);
+        FrozeCameraText.gameObject.SetActive(false);
 
         switch (GlobalStatus.currentCamera)
         {

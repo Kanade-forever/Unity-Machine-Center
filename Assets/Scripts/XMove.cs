@@ -22,13 +22,14 @@ public class XMove : MonoBehaviour
         {
             movement = new Vector3(-input, 0f, 0f);
         }
-
+        moveSpeed = GlobalStatus.speed;
         //deltaTime是两帧之间间隔的秒数，*deltaTime是确保每秒移动相同距离
         transform.Translate(movement * moveSpeed * Time.deltaTime);
 
+        /*
         Vector3 currentPostion = transform.localPosition;
         currentPostion.x = Mathf.Clamp(currentPostion.x, xMin, xMax);
-        transform.localPosition = currentPostion;
+        transform.localPosition = currentPostion;*/
 
     }
 }

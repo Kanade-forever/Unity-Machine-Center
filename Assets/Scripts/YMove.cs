@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class YMove : MonoBehaviour
 {
-    public float moveSpeed = 0.2f;
+    public float moveSpeed = 0.3f;
     public float yMin = 0.5f;
     public float yMax = 1.92f;
     GameObject yMoveObj;
@@ -48,6 +48,8 @@ public class YMove : MonoBehaviour
         {
             transform.Translate(movement * moveSpeed * Time.deltaTime);
         }*/
+
+        moveSpeed = GlobalStatus.speed;
         transform.Translate(movement * moveSpeed * Time.deltaTime);
         Vector3 currentPostion = transform.localPosition;
         currentPostion.y = Mathf.Clamp(currentPostion.y, yMin, yMax);
