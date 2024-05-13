@@ -3,22 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class defaultActionSelect : MonoBehaviour
 {
     // Start is called before the first frame update
     public Dropdown defaultActionSelectDropDown;
 
-    public PlayableDirector timeline;
+    public PlayableDirector timeline0;
+    public PlayableDirector timeline1;
+    public PlayableDirector timeline2;
 
-    private bool isAction0 = false;
-    private bool isAction1 = false;
-    private bool isAction2 = false;
+    public Button radiusChangeBtn;
+    
+    public Slider radiusSlider;
 
     private Vector3 currentPosition;
     void Start()
     {
         defaultActionSelectDropDown.onValueChanged.AddListener(onDefaultActionSelectDropDownValueChange);
+        timeline0.stopped += Timeline_stopped;
+        timeline1.stopped += Timeline_stopped;
+        timeline2.stopped += Timeline_stopped;
+    }
+
+    private void Timeline_stopped(PlayableDirector obj)
+    {
+        GlobalStatus.isOn = false;
     }
 
     void onDefaultActionSelectDropDownValueChange(int index)
@@ -36,13 +47,14 @@ public class defaultActionSelect : MonoBehaviour
 
     private void Action0()
     {
-        Debug.Log("Action0 played");
-        timeline.Play();
+        timeline0.Play();
     }
 
     private void Action1()
     {
-
+        radiusSlider.value = 0.15f;
+        radiusChangeBtn.onClick.Invoke();
+        timeline1.Play();
     }
 
     private void Action2()

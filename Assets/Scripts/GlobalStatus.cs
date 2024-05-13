@@ -11,17 +11,31 @@ public class GlobalStatus : MonoBehaviour
     public static bool isOn = false;
     public static bool isMove = false;
     public static bool isFrozeCamera = false;
-
+    /*
     public static int cutterFlash = 0;
     public const int cutterFlashPerSec = 160;
+    */
 
     public static float radius = 0.03f;
     public static float speed = 0.3f;
 
+    public GameObject testCube;
+    public GameObject locateCube;
+    public GameObject brush;
+    public GameObject locateBrush;
+
     // Start is called before the first frame update
     void Start()
     {
+        //设置帧数锁120
+        Application.targetFrameRate = 120;
 
+        //显示testcube隐藏定位用cube
+        testCube.gameObject.SetActive(true);
+        locateCube.gameObject.SetActive(false);
+
+        brush.gameObject.SetActive(true);
+        locateBrush.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
